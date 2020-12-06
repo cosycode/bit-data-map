@@ -4,13 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.cpfniliu</groupId>
+    <groupId>com.github.cosycode</groupId>
     <artifactId>bit-data-map</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <name>bit-data-map</name>
     <description>a way to transfer data in the form of dot-matrix information in pictures(比特数据图片, 一种以图片信息的形式传递数据的方式)</description>
-    <url>http://github.com/cpfniliu/binary-data-map.git</url>
+    <url>http://github.com/cosycode/bit-data-map.git</url>
 
     <parent>
         <groupId>org.sonatype.oss</groupId>
