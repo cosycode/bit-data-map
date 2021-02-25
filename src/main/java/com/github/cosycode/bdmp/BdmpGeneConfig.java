@@ -9,10 +9,12 @@ import java.util.Arrays;
 import java.util.Objects;
 
 /**
- * <b>Description : </b> 二进制图片配置类
+ * <b>Description : </b> 二进制图片配置类, 用于作为生成 bit-data-map 时的配置依据
+ * <p>
+ * <b>created in </b> 2020/5/19
  *
  * @author CPF
- * Date: 2020/5/19 18:15
+ * @since 1.0
  */
 @ToString
 public class BdmpGeneConfig {
@@ -21,17 +23,17 @@ public class BdmpGeneConfig {
      * 代表像素图片 8 * 4
      */
     @Getter
-    private int type = 0;
+    private final int type = 0;
     /**
      * 版本号: 8 * 4
      */
     @Getter
-    private int version = 1;
+    private final int version = 1;
     /**
      * 版本号: 8 * 4
      */
     @Getter
-    private long versionTime = 1589939253407L;
+    private final long versionTime = 1589939253407L;
     /**
      * 一行像素数量
      */

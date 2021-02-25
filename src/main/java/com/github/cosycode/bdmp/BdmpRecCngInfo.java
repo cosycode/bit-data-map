@@ -6,10 +6,12 @@ import java.awt.*;
 
 /**
  * <b>Description : </b> 像素图片识别出的配置信息
+ * <p>
+ * <b>created in </b> 2020/11/18
  *
  * @author CPF
- * @date 2020/11/18
- **/
+ * @since 1.0
+ */
 @Data
 public class BdmpRecCngInfo {
     /**

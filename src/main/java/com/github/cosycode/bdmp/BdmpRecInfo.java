@@ -5,10 +5,12 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * <b>Description : </b> 用于存放像素图片识别后的信息
+ * <p>
+ * <b>created in </b> 2020/11/10
  *
  * @author CPF
- * @date 2020/11/10
- **/
+ * @since 1.0
+ */
 @Data
 @Slf4j
 public class BdmpRecInfo {

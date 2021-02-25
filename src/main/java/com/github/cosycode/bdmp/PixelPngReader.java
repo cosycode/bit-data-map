@@ -10,26 +10,28 @@ import java.nio.charset.StandardCharsets;
 
 /**
  * <b>Description : </b> 用于从png图片上面读取信息的类
+ * <p>
+ * <b>created in </b> 2020/11/18
  *
  * @author CPF
- * @date 2020/11/18
- **/
+ * @since 1.0
+ */
 @Slf4j
 class PixelPngReader {
     @Getter
-    private BufferedImage image;
+    private final BufferedImage image;
 
     /**
      * x 像素区域列表
      */
     @Getter
-    private int[] xArr;
+    private final int[] xArr;
 
     /**
      * y 像素区域列表
      */
     @Getter
-    private int[] yArr;
+    private final int[] yArr;
 
     /**
      * 读取像素位置(用于计算下次读取位置)

@@ -10,10 +10,12 @@ import java.util.Objects;
 
 /**
  * <b>Description : </b> Pixel 图片生成信息对象, 在生成信息时传入此对象.
+ * <p>
+ * <b>created in </b> 2020/11/10
  *
  * @author CPF
- * @date 2020/11/10
- **/
+ * @since 1.0
+ */
 @Slf4j
 @Getter
 @ToString
@@ -51,12 +53,12 @@ public class BdmpGeneInfo {
      * 像素Y尾部
      */
     private final int pointYEnd;
-    private BdmpGeneConfig param;
-    private BdmpSource source;
+    private final BdmpGeneConfig param;
+    private final BdmpSource source;
     /**
      * 文件头
      */
-    private BdmpHeader header;
+    private final BdmpHeader header;
 
     public BdmpGeneInfo(BdmpGeneConfig param, BdmpSource source) throws IOException {
         this.param = param;

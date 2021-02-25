@@ -11,10 +11,13 @@ import java.io.IOException;
 
 /**
  * <b>Description : </b> 生成 Bdmp 图片工具类.
+ * <p>
  * 因为当前类可能需要手动输入到指定环境, 因此当前类中的代码, 以及其调用到的代码不使用任何其它非JRE官方jar包
+ * <p>
+ * <b>created in </b> 2020/5/19
  *
  * @author CPF
- * Date: 2020/5/19 15:40
+ * @since 1.0
  */
 @Slf4j
 public class BdmpHandle {

@@ -10,10 +10,12 @@ import java.util.Objects;
 
 /**
  * <b>Description : </b> 用于实际完成绘制点阵到png图片上面的类
+ * <p>
+ * <b>created in </b> 2020/11/18
  *
  * @author CPF
- * @date 2020/11/18
- **/
+ * @since 1.0
+ */
 @Slf4j
 public class PixelPngDrawer {
     /**
@@ -47,11 +49,11 @@ public class PixelPngDrawer {
     /**
      * 绘图对象
      */
-    private Graphics2D g2;
+    private final Graphics2D g2;
     /**
      * 绘制图片对象
      */
-    private BufferedImage image;
+    private final BufferedImage image;
     /**
      * 当前绘制 x坐标
      */

@@ -1,4 +1,4 @@
-package com.github.cosycode.bdmp;
+package cn.cpf.test.binpic;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -7,18 +7,25 @@ import java.io.*;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
- * <b>Description : </b> 图片工具类
- * <p>
- * <b>created in </b> 2020/5/21
+ * <b>Description : </b>
  *
  * @author CPF
- * @since 1.0
+ * Date: 2020/5/21 9:35
  */
-public class BdmpUtils {
+public class BinPicUtils {
 
-    private BdmpUtils() {
+    private BinPicUtils() {
+    }
+
+    public static void logInfo(String msg, Object... objects) {
+        final Logger global = Logger.getGlobal();
+        if (global.isLoggable(Level.INFO)) {
+            global.info(String.format(msg.replace("{}", "%s"), objects));
+        }
     }
 
     /**
@@ -34,14 +41,14 @@ public class BdmpUtils {
      * @return 像素颜色数组
      */
     @SuppressWarnings({"java:S3776", "all"})
-    public static Color[] getPxType(int powerOf2) {
+    public static Color[] getPxType(byte powerOf2) {
         Color[] colors;
         switch (powerOf2) {
             case 1:
-                colors = new Color[]{Color.RED, Color.BLUE};
+                colors = new Color[]{Color.RED, Color.WHITE};
                 break;
             case 2:
-                colors = new Color[]{Color.RED, Color.GREEN, Color.BLUE, Color.YELLOW};
+                colors = new Color[]{Color.BLUE, Color.WHITE, Color.green, Color.RED};
                 break;
             case 4: {
                 int[] rArr = {0x10, 0xe0};
@@ -76,7 +83,7 @@ public class BdmpUtils {
             }
             break;
             default:
-                throw new RuntimeException("不支持的类型");
+                throw new RuntimeException();
         }
         return colors;
     }
@@ -102,7 +109,7 @@ public class BdmpUtils {
      * <p>
      * eg: 当powOf2 为4, 将 [bbbbbbbb] 转换为 [0000bbbb, 0000bbbb], b代表有含义的数
      *
-     * @param powOf2 {@link BdmpUtils#deCodeToByte(int, byte[])}
+     * @param powOf2 {@link BinPicUtils#deCodeToByte(int, byte[])}
      */
     @SuppressWarnings("java:S127")
     public static int[] convertByte(int powOf2, byte[] b, int len) {
@@ -147,7 +154,7 @@ public class BdmpUtils {
      * <p>
      * eg: 当powOf2 为4, 将 [bbbbbbbb] 转换为 [0000bbbb, 0000bbbb], b代表有含义的数
      *
-     * @param bit {@link BdmpUtils#deCodeToByte(int, byte[])}
+     * @param bit {@link BinPicUtils#deCodeToByte(int, byte[])}
      */
     @SuppressWarnings("java:S127")
     public static int[] concatByte(int bit, byte[] b, int len) {
@@ -264,9 +271,6 @@ public class BdmpUtils {
         return new byte[0];
     }
 
-    /**
-     * copy by {@link org.apache.commons.lang3.Validate#isTrue(boolean, String, Object...)}
-     */
     public static void isTrue(final boolean expression, final String message, final Object... values) {
         if (!expression) {
             throw new IllegalArgumentException(String.format(message, values));

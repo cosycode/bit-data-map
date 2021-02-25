@@ -8,9 +8,11 @@ import java.util.Date;
 
 /**
  * <b>Description : </b> 头实体信息
+ * <p>
+ * <b>created in </b> 2020/5/21
  *
  * @author CPF
- * Date: 2020/5/21 14:17
+ * @since 1.0
  */
 @Data
 public class BdmpHeader implements Serializable {

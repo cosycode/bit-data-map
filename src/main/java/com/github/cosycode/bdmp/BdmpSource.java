@@ -11,17 +11,19 @@ import java.util.Objects;
 
 /**
  * <b>Description : </b> 图片源
+ * <p>
+ * <b>created in </b> 2020/11/18
  *
  * @author CPF
- * @date 2020/11/18
- **/
+ * @since 1.0
+ */
 @Getter
 public class BdmpSource {
 
-    private SourceType sourceType;
-    private String name;
+    private final SourceType sourceType;
+    private final String name;
     private byte[] content;
-    private SupplierWithThrow<byte[], IOException> dataSupplier;
+    private final SupplierWithThrow<byte[], IOException> dataSupplier;
 
     public BdmpSource(SourceType sourceType, String name, SupplierWithThrow<byte[], IOException> dataSupplier) {
         this.sourceType = sourceType;

@@ -16,9 +16,11 @@ import java.util.List;
 
 /**
  * <b>Description : </b> 解析二进制图片工具类
+ * <p>
+ * <b>created in </b> 2020/5/19
  *
  * @author CPF
- * Date: 2020/5/19 18:15
+ * @since 1.0
  */
 @Slf4j
 public class BdmpRecognizer {
@@ -214,16 +216,18 @@ public class BdmpRecognizer {
         }
         int x, y, len;
         // →
-        for (x = leftTopPoint.x + 1, y = leftTopPoint.y, len = width - 1; x < len && isBorderVal(image.getRGB(x, y)); x++);
+        for (x = leftTopPoint.x + 1, y = leftTopPoint.y, len = width - 1; x < len && isBorderVal(image.getRGB(x, y)); x++)
+            ;
         Point rightTop = new Point(x - 1, y);
         // →↓
-        for (x = rightTop.x, y = rightTop.y, len = height - 1; y < len && isBorderVal(image.getRGB(x, y)); y++);
+        for (x = rightTop.x, y = rightTop.y, len = height - 1; y < len && isBorderVal(image.getRGB(x, y)); y++) ;
         Point rightBottom1 = new Point(x, y - 1);
         // ↓
-        for (x = leftTopPoint.x, y = leftTopPoint.y + 1, len = height - 1; y < len && isBorderVal(image.getRGB(x, y)); y++);
+        for (x = leftTopPoint.x, y = leftTopPoint.y + 1, len = height - 1; y < len && isBorderVal(image.getRGB(x, y)); y++)
+            ;
         Point leftBottom = new Point(x, y - 1);
         // ↓→
-        for (x = leftBottom.x, y = leftBottom.y, len = width - 1; x < len && isBorderVal(image.getRGB(x, y)); x++);
+        for (x = leftBottom.x, y = leftBottom.y, len = width - 1; x < len && isBorderVal(image.getRGB(x, y)); x++) ;
         Point rightBottom2 = new Point(x - 1, y);
         // 判断黑白像素从左上角向下, 向右延申查询有效区域, 是否能够在右下角合并一起
         if (!rightBottom1.equals(rightBottom2)) {
