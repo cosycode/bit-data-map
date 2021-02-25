@@ -20,8 +20,17 @@ import java.util.Objects;
 @Getter
 public class BdmpSource {
 
+    /**
+     * 图片源类型
+     */
     private final SourceType sourceType;
+    /**
+     * 图片源名称, 如果源是文件的话, 那么此处为文件的名字
+     */
     private final String name;
+    /**
+     * 源内容
+     */
     private byte[] content;
     private final SupplierWithThrow<byte[], IOException> dataSupplier;
 

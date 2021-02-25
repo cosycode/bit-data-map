@@ -6,7 +6,7 @@
 
     <groupId>com.github.cosycode</groupId>
     <artifactId>bit-data-map</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.1</version>
 
     <name>bit-data-map</name>
     <description>a way to transfer data in the form of dot-matrix information in pictures(比特数据图片, 一种以图片信息的形式传递数据的方式)</description>

@@ -11,6 +11,8 @@ import java.util.Objects;
 /**
  * <b>Description : </b> Pixel 图片生成信息对象, 在生成信息时传入此对象.
  * <p>
+ *     该对象用于确定生成图片的尺寸, 有效区位置等
+ * <p>
  * <b>created in </b> 2020/11/10
  *
  * @author CPF
@@ -60,6 +62,13 @@ public class BdmpGeneInfo {
      */
     private final BdmpHeader header;
 
+    /**
+     * 根据配置和源生成Bdmp图片操作参考对象, 该对象用于确定生成图片的尺寸, 有效区位置等
+     *
+     * @param param 生成像素图片参数配置
+     * @param source 生成像素图片源对象
+     * @throws IOException 图片源提取源数据异常
+     */
     public BdmpGeneInfo(BdmpGeneConfig param, BdmpSource source) throws IOException {
         this.param = param;
         this.source = source;
