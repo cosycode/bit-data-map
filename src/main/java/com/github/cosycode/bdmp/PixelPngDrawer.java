@@ -233,7 +233,7 @@ public class PixelPngDrawer {
             x = pointXStart;
             return;
         }
-        throw new RuntimeException("draw pixel out of range");
+        throw new RuntimeException(String.format("draw pixel out of range ==> x: %s, y: %s, drawer: %s", x, y, toString()));
     }
 
 }

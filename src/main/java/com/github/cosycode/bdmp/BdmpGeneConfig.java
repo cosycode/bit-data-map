@@ -16,7 +16,7 @@ import java.util.Objects;
  * @author CPF
  * @since 1.0
  */
-@ToString
+@ToString(exclude = "mappingColor")
 public class BdmpGeneConfig {
 
     /**

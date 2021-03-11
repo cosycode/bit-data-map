@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.awt.*;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 
 /**
@@ -92,7 +93,8 @@ public class BdmpGeneInfo {
         header.setContentMd5(BdmpUtils.encrypt2ToMd5(dataByte));
         final String json = header.toJson();
         log.info("head\t" + json);
-        final byte[] headBytes = json.getBytes();
+        // 注意: json 中有中文字符, 如果不指定编码将会造成不同编码格式下执行得到的 byte 不一样, 此处指定 UTF-8 编码
+        final byte[] headBytes = json.getBytes(StandardCharsets.UTF_8);
 
         // 像素总个数 ==> 前8个像素:这是个像素图片 + 映射颜色的像素 + (一行像素数量:4, 头长度信息:4, 数据头, 数据内容)
         int pxTotalSize = 8 + mappingColor.length + (4 + 4 + headBytes.length + dataByte.length) * (8 / bitCnt);
