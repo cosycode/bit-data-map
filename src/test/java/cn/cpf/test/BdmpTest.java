@@ -19,17 +19,15 @@ import java.io.IOException;
  */
 public class BdmpTest {
 
-    public static final String SOURCE_PATH = "D:\\Users\\CPF\\Desktop\\轻音乐-兰花草.mp3";
+    public static final String SOURCE_PATH = "D:\\Users\\CPF\\Desktop\\out\\realtime\\应用系统开发管理手册（2020年版）分册.part11.rar";
 
     /**
      * 生成二级制数据像素图片方式0
      *
      * @throws IOException 读取文件异常
      */
-    @Test
+//    @Test
     public void geneBdmp0() throws IOException {
-        // 待转换的文件
-        final String SOURCE_PATH = "D:\\Users\\CPF\\Desktop\\轻音乐-兰花草.mp3";
         // 转换后的文件存放位置
         final String bdmpFilePath = SOURCE_PATH + ".png";
 
@@ -43,8 +41,6 @@ public class BdmpTest {
      */
     @Test
     public void geneBdmp1() throws IOException {
-        // 待转换的文件
-        final String SOURCE_PATH = "D:\\Users\\CPF\\Desktop\\轻音乐-兰花草.mp3";
         // 转换后的文件存放位置
         final String bdmpFilePath = SOURCE_PATH + ".png";
 
@@ -70,7 +66,7 @@ public class BdmpTest {
         ImageIO.write(image, "png", new FileOutputStream(bdmpFilePath));
     }
 
-    @Test
+//    @Test
     public void geneBdmp2() throws IOException {
         final String t = "二进制数据图片";
         // 数据源
@@ -93,7 +89,7 @@ public class BdmpTest {
     @Test
     public void recBdmp() throws IOException {
         // 待转换的图片文件
-        final String SOURCE_PATH = "D:\\Users\\CPF\\Desktop\\轻音乐-兰花草.mp3.png";
+        final String SOURCE_PATH = "D:\\Users\\CPF\\Desktop\\out\\realtime\\tmp\\应用系统开发管理手册（2020年版）分册.part11.rar.png";
         // 转换后的文件存放文件夹
         final String recDirPath = "D:\\Users\\CPF\\Desktop\\";
 

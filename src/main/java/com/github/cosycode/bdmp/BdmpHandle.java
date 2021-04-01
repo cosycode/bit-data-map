@@ -1,11 +1,12 @@
 package com.github.cosycode.bdmp;
 
-import com.github.cosycode.common.util.io.IoUtils;
+import com.github.cosycode.common.util.io.FileSystemUtils;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -42,6 +43,9 @@ public class BdmpHandle {
      * @throws IOException 写入文件和读取文件流异常
      */
     public static BufferedImage convertFileToBdmp(File file, int rowPxNum, int pixelSideLength, int margin, byte powerOf2) throws IOException {
+        if (!file.exists()) {
+            throw new FileNotFoundException("文件不存在: " + file.getPath());
+        }
         BdmpGeneConfig bdmpGeneConfig = new BdmpGeneConfig();
         bdmpGeneConfig.setMargin(margin);
         bdmpGeneConfig.setRowPixelCnt(rowPxNum);
@@ -115,7 +119,7 @@ public class BdmpHandle {
             saveDirPath += File.separator;
         }
         // 确保存储的文件夹存在
-        IoUtils.insureFileDirExist(new File(saveDirPath));
+        FileSystemUtils.insureFileDirExist(new File(saveDirPath));
         // 写入文件
         try (FileOutputStream outputStream = new FileOutputStream(new File(saveDirPath + picRecInfo.getBdmpHeader().getTag()))) {
             outputStream.write(picRecInfo.getFileContent());

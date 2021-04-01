@@ -8,7 +8,6 @@ import java.util.Arrays;
 
 public class ColorTest {
 
-    @Test
     public void main() {
         final Color[] pxType = BdmpUtils.getPxType((byte) 8);
         if (pxType.length == 256) {

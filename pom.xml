@@ -6,7 +6,7 @@
 
     <groupId>com.github.cosycode</groupId>
     <artifactId>bit-data-map</artifactId>
-    <version>1.1</version>
+    <version>1.3</version>
 
     <name>bit-data-map</name>
     <description>a way to transfer data in the form of dot-matrix information in pictures(比特数据图片, 一种以图片信息的形式传递数据的方式)</description>
@@ -50,7 +50,7 @@
         <dependency>
             <groupId>com.github.cosycode</groupId>
             <artifactId>common-lang</artifactId>
-            <version>1.0</version>
+            <version>1.3</version>
         </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>
