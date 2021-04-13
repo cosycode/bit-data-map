@@ -183,12 +183,16 @@ public class BdmpRecognizer {
         if (isNearColor(rgbMinusOne, image.getRGB(r, r - 1)) && isBorderVal(image.getRGB(r - 1, r))) {
             // 如果左边是 黑白框 点,
             int x = r - 2;
-            while (isBorderVal(image.getRGB(x, r))) x--;
-            return new Point(++x, r);
+            while (x >=0 && isBorderVal(image.getRGB(x, r))) x--;
+            if (x >= 0) {
+                return new Point(++x, r);
+            }
         } else if (isNearColor(rgbMinusOne, image.getRGB(r - 1, r)) && isBorderVal(image.getRGB(r, r - 1))) {
             int y = r - 2;
-            while (isBorderVal(image.getRGB(r, y))) y--;
-            return new Point(r, ++y);
+            while (y >= 0 && isBorderVal(image.getRGB(r, y))) y--;
+            if (y >= 0) {
+                return new Point(r, ++y);
+            }
         } else if (isNearColor(rgbMinusOne, image.getRGB(r - 1, r)) && isNearColor(rgbMinusOne, image.getRGB(r, r - 1))) {
             return new Point(r, r);
         }
